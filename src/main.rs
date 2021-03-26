@@ -124,11 +124,11 @@ async fn main() -> std::io::Result<()> {
     let ttl = args.value_of("ttl").unwrap();
     info!("files ttl: {}", ttl);
 
-    let store = store::Store::new(
-        args.value_of("STORE_PATH").unwrap(),
-        parse_duration(ttl).unwrap(),
-    )
-    .expect("failed to open store");
+    let store = args.value_of("STORE_PATH").unwrap();
+    info!("store into: {}", store);
+
+    let store =
+        store::Store::new(store, parse_duration(ttl).unwrap()).expect("failed to open store");
 
     let ctx = Context {
         pgp: verificator,
