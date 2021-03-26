@@ -1,0 +1,19 @@
+[package]
+name = "signed-store"
+version = "0.1.0"
+authors = ["MacRat <m@crat.jp>"]
+edition = "2018"
+
+[dependencies]
+sequoia-openpgp = "1"
+anyhow = "1"
+actix = "0.11"
+actix-web = "3"
+actix-files = "0.5"
+uuid = { version = "0.8", features = ["v5"] }
+filetime = "0.2"
+mime = "0.3"
+clap = "2"
+humantime = "2"
+env_logger = "0.8"
+log = "0.4"
